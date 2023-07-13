@@ -1,5 +1,4 @@
 Alden's sample project experience from the UW Paul Allen School of Computer Science. 
-
 ---
 
 ### Campus Map
