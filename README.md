@@ -1,5 +1,4 @@
-# UW Coding Projects
-Alden's sample project experience at UW Paul Allen. 
+Alden's sample project experience from the UW Paul Allen School of Computer Science. 
 
 ### Campus Map
 Full implementation of Dijkstra’s algorithm to find shortest path between buildings on UW campus using a personalized, generic graph data structure in Java. Front-end UI integration with HTML and ReactJS. Practice with simple HTTP servers in Java.
