@@ -9,7 +9,7 @@ The quarter-long goal of this project was to build a sharded, linearizable, scal
 highly available key-value store, with dynamic load balancing and atomic multi-key transactions, similar 
 to Amazon’s DynamoDB or Google’s Spanner.
 </p>
-<br><br>
+<p>
 The project was primarily written in Java, beginning with the creation of a personalized key-value store. Fault 
 tolerance was attempted first with a primary/backup system, wherein two servers act together to 
 guarantee no state is lost or altered from the client's perspective. The client talks to the primary, 
@@ -17,7 +17,8 @@ who executes after the backup has processed the request as well. The servers int
 who tells them who is primary and who is backup at any given time. Linearizability was guaranteed through "exactly
 once" semantics, where clients would retry requests on timers and servers use cached results for already executed 
 requests. 
-<br><br>
+</p>
+<p>
 To guarantee linearizability of commands in the event that the ViewServer goes down, a Paxos protocol 
 was then implemented. The version implemented in class was adapted from <a href="https://paxos.systems/">this</a> 
 paper. In general, clients send requests to all replicas, of which only the leader of the Paxos group processes, 
@@ -26,7 +27,8 @@ been reached, the leader processes the request and replies to the client, with t
 commands in their own log which is updated by the leader through heartbeat messages. Servers talk to each other through 
 a series of messages that each contain their own functionality, and timers are used to solve network latency issues, 
 including message delays, reorders, and drops. "Exactly once" semantics are still guaranteed. 
-<br><br>
+</p>
+<p>
 Scalability is addressed by creating a transactional key-value store that can handle sets of client requests, while 
 the keys are sharded across the servers using consistent virtual hashing. A ShardMaster manages a sequence of numbered 
 configurations describing a set of replica groups and an assignment of shards. Each replica group runs the previously 
@@ -34,9 +36,11 @@ implemented Paxos protocol to guarantee linearizability of commands. To help gua
 ShardMaster will dynamically load balance the store, determining if a new configuration is necessary and redistributing 
 shards to new groups as they come and go or as keys become more popular. Lastly, transactions are processed using a 
 two-phase commit strategy so that commands can be executed across shard groups. 
-<br><br>
+</p>
+<p>
 Please reach out to me via email at aldenhinden@gmail.com or aghs@cs.washington.edu for code. I would be happy to 
 discuss this project further as it was one of my favorites, and this is a very succinct description. 
+</p>
 </details>
 
 <details>
