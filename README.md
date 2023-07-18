@@ -2,9 +2,11 @@ Alden's sample project experience from the UW Paul Allen School of Computer Scie
 
 ---
 
-### Distributed System
+<details>
+<summary>### Distributed System</summary>
 Built a sharded, linearizable, scalable, fault tolerant (Primary/Backup → Paxos), highly available key-value store, with dynamic load balancing and atomic multi-key transactions in Java; similar to Amazon’s DynamoDB or Google’s Spanner.
 ![pmmc](/docs/ds/pmmc.png)
+</details>
 
 ---
 
