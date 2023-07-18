@@ -1,11 +1,11 @@
-Alden's sample project experience from the UW Paul Allen School of Computer Science. 
+Some of Alden's sample [projects](https://aldenhinden.github.io/UW-Coding-Projects/) from the [UW Paul Allen School of Computer Science](https://www.cs.washington.edu/). 
 
 ---
 
 <details>
 <summary>Distributed System</summary>
 Built a sharded, linearizable, scalable, fault tolerant (Primary/Backup → Paxos), highly available key-value store, with dynamic load balancing and atomic multi-key transactions in Java; similar to Amazon’s DynamoDB or Google’s Spanner.
-![pmmc](/docs/ds/pmmc.png)
+<img src="/docs/ds/pmmc.png">
 </details>
 
 <details>
