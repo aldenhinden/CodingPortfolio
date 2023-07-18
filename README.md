@@ -4,7 +4,19 @@ Some of Alden's sample [projects](https://aldenhinden.github.io/UW-Coding-Projec
 
 <details>
 <summary>Distributed System</summary>
-Built a sharded, linearizable, scalable, fault tolerant (Primary/Backup → Paxos), highly available key-value store, with dynamic load balancing and atomic multi-key transactions in Java; similar to Amazon’s DynamoDB or Google’s Spanner.
+The quarter-long goal of this project was to build a sharded, linearizable, scalable, fault-tolerant, 
+highly available key-value store, with dynamic load balancing and atomic multi-key transactions; 
+this is similar to Amazon’s DynamoDB or Google’s Spanner. 
+
+The project was done in Java, beginning with the creation of a personalized key-value store. Fault 
+tolerance was attempted first with a primary/backup system, wherein two servers act together to 
+guarantee no state is lost or altered from the clients perspective. The client talks to the primary, 
+who executes after the backup has processed the request as well. The servers interact with a ViewServer 
+who tells them who is primary and who is backup at any given time. 
+
+To guarantee linearizability of commands in the event that the ViewServer goes down, a Paxos protocol 
+was then implemented. 
+
 <img src="/docs/ds/pmmc.png">
 </details>
 
