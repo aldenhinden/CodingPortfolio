@@ -5,7 +5,7 @@ Some of Alden's sample [projects](https://aldenhinden.github.io/UW-Coding-Projec
 <details>
 <summary>Distributed System</summary>
 Built a sharded, linearizable, scalable, fault tolerant (Primary/Backup → Paxos), highly available key-value store, with dynamic load balancing and atomic multi-key transactions in Java; similar to Amazon’s DynamoDB or Google’s Spanner.
-<img src="/docs/ds/pmmc.png" width="1198" height="874">
+<img src="/docs/ds/pmmc.png" height="1198" width="874">
 </details>
 
 <details>
