@@ -38,7 +38,7 @@ shards to new groups as they come and go or as keys become more popular. Lastly,
 two-phase commit strategy so that commands can be executed across shard groups. 
 </p>
 <p>
-Please reach out to me via email at aldenhinden@gmail.com or aghs@cs.washington.edu for code. I would be happy to 
+Please reach out to me via email at <a href="aldenhinden@gmail.com">aldenhinden@gmail.com</a> or aghs@cs.washington.edu for code. I would be happy to 
 discuss this project further as it was one of my favorites, and this is a very succinct description. 
 </p>
 </details>
