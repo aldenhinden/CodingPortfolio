@@ -3,10 +3,12 @@ Some of Alden's sample [projects](https://aldenhinden.github.io/UW-Coding-Projec
 ---
 
 <details>
-<summary>Distributed System</summary>
+<summary><b>Distributed System</b></summary>
+<p>
 The quarter-long goal of this project was to build a sharded, linearizable, scalable, fault-tolerant, 
 highly available key-value store, with dynamic load balancing and atomic multi-key transactions, similar 
 to Amazon’s DynamoDB or Google’s Spanner.
+</p>
 <br><br>
 The project was primarily written in Java, beginning with the creation of a personalized key-value store. Fault 
 tolerance was attempted first with a primary/backup system, wherein two servers act together to 
