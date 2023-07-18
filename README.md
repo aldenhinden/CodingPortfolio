@@ -3,11 +3,11 @@ Some of Alden's sample [projects](https://aldenhinden.github.io/UW-Coding-Projec
 ---
 
 <details>
-<summary><b>Distributed System</b></summary>
+<summary><b>Distributed System:</b> A Java Non-Relational Database Similar to Amazon’s DynamoDB or 
+Google’s Spanner</summary>
 <p>
 The quarter-long goal of this project was to build a sharded, linearizable, scalable, fault-tolerant, 
-highly available key-value store, with dynamic load balancing and atomic multi-key transactions, similar 
-to Amazon’s DynamoDB or Google’s Spanner.
+highly available key-value store, with dynamic load balancing and atomic multi-key transactions.
 </p>
 <p>
 The project was primarily written in Java, beginning with the creation of a personalized key-value store. Fault 
@@ -38,34 +38,47 @@ shards to new groups as they come and go or as keys become more popular. Lastly,
 two-phase commit strategy so that commands can be executed across shard groups. 
 </p>
 <p>
-Please reach out to me via email at <a href="aldenhinden@gmail.com">aldenhinden@gmail.com</a> or aghs@cs.washington.edu for code. I would be happy to 
+Please reach out to me via email at aldenhinden@gmail.com or aghs@cs.washington.edu for code. I would be happy to 
 discuss this project further as it was one of my favorites, and this is a very succinct description. 
 </p>
 </details>
 
+
 <details>
-<summary>ReWrite</summary>
+<summary><b>ReWrite:</b> A ChatGPT Integrated PDF Summarizer</summary>
 Full stack development on a team integrating the ChatGPT API into an Angular CLI website, using prompt engineering and JavaScript web scraping to return summaries of uploaded PDFs. Experience configuring a virtual private server to fully deploy the website using Vultr. Continuous integration and testing experience.
 </details>
 
+
 <details>
-<summary>Campus Map</summary>
+<summary><b>Campus Map:</b> A Pathfinding Resource for the UW Campus</summary>
 Full implementation of Dijkstra’s algorithm to find the shortest path between buildings on UW campus using a personalized, generic graph data structure in Java. Front-end UI integration with HTML and ReactJS. Practice with simple HTTP servers in Java.
 </details>
 
+
 <details>
-<summary>G333gle</summary>
+<summary><b>G333gle:</b> A C/C++ File System Crawler, Indexer, and Search Engine</summary>
 Created LinkedList and HashMap data structures in C to integrate with C++ index file to serve as back-end of a simple word-matching “mini Google”. Practice with C/C++ HTTP server implementation.
 </details>
 
 
 <details>
-<summary>PacMan Search</summary>
+<summary><b>PacMan Search:</b> AI Driven Maze Pathfinding in Python</summary>
 Optimizing maze pathfinding in Python with BFS, DFS, UCS, A* search, Alpha-Beta Pruning, and practice with evaluation functions. Further exploration into reinforcement learning with value iteration, Epsilon Greedy, Q-learning, and particle filtering
 </details>
 
 
 <details>
+<summary>Other Smaller Works...</summary>
+
+<details>
 <summary>Census Map</summary>
 Practice with Java’s ForkJoinPool framework, using parallelism to compute query responses on a US population map.
+</details>
+
+<details>
+<summary>Java Data Structures</summary>
+Stacks, Queues, AVL Trees, and much more!
+</details>
+
 </details>
