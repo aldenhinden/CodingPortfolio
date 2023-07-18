@@ -71,14 +71,17 @@ Optimizing maze pathfinding in Python with BFS, DFS, UCS, A* search, Alpha-Beta 
 <details>
 <summary>Other Smaller Works...</summary><br>
 
-<details style="margin-left: 25px;">
+<div style="margin-left: 25px;">
+<details>
 <summary>Census Map</summary>
 Practice with Java’s ForkJoinPool framework, using parallelism to compute query responses on a US population map.
 </details>
 
-<details style="margin-left: 25px;">
+<details>
 <summary>Java Data Structures</summary>
 Stacks, Queues, AVL Trees, and much more!
 </details>
+</div>
+
 
 </details>
