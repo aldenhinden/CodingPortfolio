@@ -66,22 +66,3 @@ Created LinkedList and HashMap data structures in C to integrate with C++ index 
 <summary><b>PacMan Search:</b> AI Driven Maze Pathfinding in Python</summary><br>
 Optimizing maze pathfinding in Python with BFS, DFS, UCS, A* search, Alpha-Beta Pruning, and practice with evaluation functions. Further exploration into reinforcement learning with value iteration, Epsilon Greedy, Q-learning, and particle filtering
 </details>
-
-
-<details>
-<summary>Other Smaller Works...</summary><br>
-
-<div style="margin-left: 25px;">
-<details>
-<summary>Census Map</summary>
-Practice with Java’s ForkJoinPool framework, using parallelism to compute query responses on a US population map.
-</details>
-
-<details>
-<summary>Java Data Structures</summary>
-Stacks, Queues, AVL Trees, and much more!
-</details>
-</div>
-
-
-</details>
