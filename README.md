@@ -41,25 +41,25 @@ two-phase commit strategy so that commands can be executed across shard groups.
 Please reach out to me via email at aldenhinden@gmail.com or aghs@cs.washington.edu for code. I would be happy to 
 discuss this project further as it was one of my favorites, and this is a very succinct description. 
 </p>
-</details>
+</details><br>
 
 
 <details>
 <summary><b>ReWrite:</b> A ChatGPT Integrated PDF Summarizer</summary><br>
 Full stack development on a team integrating the ChatGPT API into an Angular CLI website, using prompt engineering and JavaScript web scraping to return summaries of uploaded PDFs. Experience configuring a virtual private server to fully deploy the website using Vultr. Continuous integration and testing experience.
-</details>
+</details><br>
 
 
 <details>
 <summary><b>Campus Map:</b> A Pathfinding Resource for the UW Campus</summary><br>
 Full implementation of Dijkstra’s algorithm to find the shortest path between buildings on UW campus using a personalized, generic graph data structure in Java. Front-end UI integration with HTML and ReactJS. Practice with simple HTTP servers in Java.
-</details>
+</details><br>
 
 
 <details>
 <summary><b>G333gle:</b> A C/C++ File System Crawler, Indexer, and Search Engine</summary><br>
 Created LinkedList and HashMap data structures in C to integrate with C++ index file to serve as back-end of a simple word-matching “mini Google”. Practice with C/C++ HTTP server implementation.
-</details>
+</details><br>
 
 
 <details>
