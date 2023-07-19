@@ -81,7 +81,17 @@ email at aldenhinden@gmail.com or aghs@cs.washington.edu for code as I would be 
 
 <details>
 <summary><b>Campus Map:</b> Pathfinding Resource for the UW Campus</summary><br>
-Full implementation of Dijkstra’s algorithm to find the shortest path between buildings on UW campus using a personalized, generic graph data structure in Java. Front-end UI integration with HTML and ReactJS. Practice with simple HTTP servers in Java.
+<p>
+
+*****NEED TO GET SDK UPDATED OR SOMETHING TO MAKE PROJECT LOAD
+
+Full implementation of Dijkstra’s algorithm to find the shortest path between buildings on UW campus using a 
+personalized, generic graph data structure in Java. Front-end UI integration with HTML and ReactJS. Practice 
+with simple HTTP servers in Java. 
+</p>
+<p>
+
+</p>
 </details><br>
 
 
