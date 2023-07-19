@@ -28,6 +28,7 @@ commands in their own log which is updated by the leader through heartbeat messa
 a series of messages that each contain their own functionality, and timers are used to solve network latency issues, 
 including message delays, reorders, and drops. "Exactly once" semantics are still guaranteed. 
 </p>
+<img src="docs/ds/pmmc.png" alt="Paxos made moderately complex, algorithm flow chart">
 <p>
 Scalability is addressed by creating a transactional key-value store that can handle sets of client requests, while 
 the keys are sharded across the servers using consistent virtual hashing. A ShardMaster manages a sequence of numbered 
@@ -38,15 +39,43 @@ shards to new groups as they come and go or as keys become more popular. Lastly,
 two-phase commit strategy so that commands can be executed across shard groups. 
 </p>
 <p>
-Please reach out to me via email at aldenhinden@gmail.com or aghs@cs.washington.edu for code. I would be happy to 
-discuss this project further as it was one of my favorites, and this is a very succinct description. 
+The code for this project was written for the class CSE 452: Distributed Systems at UW. Please reach out to me via 
+email at aldenhinden@gmail.com or aghs@cs.washington.edu for code. I would be happy to discuss this project further 
+as this is a very succinct description, and it was one of my personal favorites. 
 </p>
 </details><br>
 
 
 <details>
 <summary><b>ReWrite:</b> ChatGPT Integrated PDF Summarizer</summary><br>
-Full stack development on a team integrating the ChatGPT API into an Angular CLI website, using prompt engineering and JavaScript web scraping to return summaries of uploaded PDFs. Experience configuring a virtual private server to fully deploy the website using Vultr. Continuous integration and testing experience.
+<p>
+Full stack development on a team integrating the ChatGPT API into an Angular CLI website, using prompt engineering 
+and JavaScript web scraping to return summaries of uploaded PDFs. Experience configuring a virtual private server 
+to fully deploy the website using <a href="https://www.vultr.com/">Vultr</a>'s high performance cloud servers. 
+Continuous integration and testing experience.
+</p>
+<p>
+The primary intended use case for this product was to provide users with the ability to summarize complex research 
+papers easily. The user visits our website, navigates to the "translate" page, and clicks "upload", providing a PDF 
+which they wish to have summarized (note: they must also provide their own API key from OpenAI in the class version). 
+They have the option to choose a "quick" translation or a "deep" translation, which will make calls to the ChatGPT API 
+either in parallel or sequentially, respectively. 
+</p>
+<img src="docs/rewrite/rewrite.png" alt="ReWrite translate page">
+<p>
+The website front end was developed using the Angular CLI framework. Uploaded PDFs are scraped using the pdf-parse 
+package from Node.js, and the output string is thereafter sent to simplification. After a prompt describing to ChatGPT 
+how to summarize is made, the text is broken up into chunks before being sent to ChatGPT through API calls (if "quick" 
+mode is enabled, these calls are made in parallel). ChatGPT processes the text chunk-by-chunk before sending the 
+result back to the front end. The front end and back end communicate through their respective servers. Continuous 
+integration is set up through the Node.js by GitHub Actions using Mocha tests and the Chai testing framework. The 
+website was deployed using <a href="https://www.vultr.com/">Vultr</a> to create both a development and production 
+version of the website.
+</p>
+<p>
+The code for this project was written for the class CSE 403: Software Engineering at UW. Please reach out to me via 
+email at aldenhinden@gmail.com or aghs@cs.washington.edu for code as I would be happy to discuss this project further.  
+</p>
 </details><br>
 
 
