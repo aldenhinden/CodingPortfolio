@@ -3,7 +3,7 @@ Some of Alden's sample [projects](https://aldenhinden.github.io/UW-Coding-Projec
 ---
 
 <details>
-<summary><b>Distributed System:</b> A Java Non-Relational Database Similar to Amazon’s DynamoDB or 
+<summary><b>Distributed System:</b> Java Non-Relational Database Similar to Amazon’s DynamoDB or 
 Google’s Spanner</summary><br>
 <p>
 The quarter-long goal of this project was to build a sharded, linearizable, scalable, fault-tolerant, 
@@ -45,19 +45,19 @@ discuss this project further as it was one of my favorites, and this is a very s
 
 
 <details>
-<summary><b>ReWrite:</b> A ChatGPT Integrated PDF Summarizer</summary><br>
+<summary><b>ReWrite:</b> ChatGPT Integrated PDF Summarizer</summary><br>
 Full stack development on a team integrating the ChatGPT API into an Angular CLI website, using prompt engineering and JavaScript web scraping to return summaries of uploaded PDFs. Experience configuring a virtual private server to fully deploy the website using Vultr. Continuous integration and testing experience.
 </details><br>
 
 
 <details>
-<summary><b>Campus Map:</b> A Pathfinding Resource for the UW Campus</summary><br>
+<summary><b>Campus Map:</b> Pathfinding Resource for the UW Campus</summary><br>
 Full implementation of Dijkstra’s algorithm to find the shortest path between buildings on UW campus using a personalized, generic graph data structure in Java. Front-end UI integration with HTML and ReactJS. Practice with simple HTTP servers in Java.
 </details><br>
 
 
 <details>
-<summary><b>G333gle:</b> A C/C++ File System Crawler, Indexer, and Search Engine</summary><br>
+<summary><b>G333gle:</b> C/C++ File System Crawler, Indexer, and Search Engine</summary><br>
 Created LinkedList and HashMap data structures in C to integrate with C++ index file to serve as back-end of a simple word-matching “mini Google”. Practice with C/C++ HTTP server implementation.
 </details><br>
 
