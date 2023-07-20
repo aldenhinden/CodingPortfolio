@@ -2,7 +2,7 @@ Some of Alden's sample [projects](https://aldenhinden.github.io/UW-Coding-Projec
 
 ---
 
-# (DISTRIBUTED SYSTEM)
+<!-- ================================== DISTRIBUTED SYSTEM ================================== -->
 <details>
 <summary><b>Distributed System:</b> Java Non-Relational Database Similar to Amazon’s DynamoDB or 
 Google’s Spanner</summary><br>
@@ -46,7 +46,8 @@ as this is a very succinct description, and it was one of my personal favorites.
 </p>
 </details><br>
 
-# (REWRITE)
+
+<!-- ================================== REWRITE ================================== -->
 <details>
 <summary><b>ReWrite:</b> ChatGPT Integrated PDF Summarizer</summary><br>
 <p>
@@ -79,7 +80,8 @@ email at aldenhinden@gmail.com or aghs@cs.washington.edu for code as I would be 
 </p>
 </details><br>
 
-# (CAMPUS MAP)
+
+<!-- ================================== CAMPUS MAP ================================== -->
 <details>
 <summary><b>Campus Map:</b> Pathfinding Resource for the UW Campus</summary><br>
 <p>
@@ -168,13 +170,15 @@ project further.
 
 </details><br>
 
-# (G333GLE)
+
+<!-- ================================== G333GLE ================================== -->
 <details>
 <summary><b>G333gle:</b> C/C++ File System Crawler, Indexer, and Search Engine</summary><br>
 Created LinkedList and HashMap data structures in C to integrate with C++ index file to serve as back-end of a simple word-matching “mini Google”. Practice with C/C++ HTTP server implementation.
 </details><br>
 
-# (PACMAN SEARCH)
+
+<!-- ================================== PACMAN SEARCH ================================== -->
 <details>
 <summary><b>PacMan Search:</b> AI Driven Maze Pathfinding in Python</summary><br>
 Optimizing maze pathfinding in Python with BFS, DFS, UCS, A* search, Alpha-Beta Pruning, and practice with evaluation functions. Further exploration into reinforcement learning with value iteration, Epsilon Greedy, Q-learning, and particle filtering
