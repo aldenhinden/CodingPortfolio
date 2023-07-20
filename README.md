@@ -94,7 +94,7 @@ path between those two locations using a purple line.
 </p>
 <p>
 The buildings are read from a CSV file into the generic graph data structure. The <code>Graph&ltN, E&gt</code> is a 
-wrapper around a <code>HashMap<Node<N>, HashSet<Edge<E, N>>></code> and supports the following 
+wrapper around a <code>HashMap&ltNode&ltN&gt, HashSet&ltEdge&ltE, N&gt&gt&gt</code> and supports the following 
 functions: <code>addNode(N label), addEdge(E label, N source, N dest), getNodeList(), getEdgeSet(N parent), 
 getParents(N node), getChildren(N node), hasNode(Object o), hasEdge(E label, N source, N dest)</code>. Once the 
 buildings are read from CSV file, a graph is constructed mapping building names to their Double coordinates. That 
