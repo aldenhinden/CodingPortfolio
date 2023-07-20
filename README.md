@@ -82,16 +82,61 @@ email at aldenhinden@gmail.com or aghs@cs.washington.edu for code as I would be 
 <details>
 <summary><b>Campus Map:</b> Pathfinding Resource for the UW Campus</summary><br>
 <p>
-
-*****NEED TO GET SDK UPDATED OR SOMETHING TO MAKE PROJECT LOAD
-
 Full implementation of Dijkstra’s algorithm to find the shortest path between buildings on UW campus using a 
 personalized, generic graph data structure in Java. Front-end UI integration with HTML and ReactJS. Practice 
 with simple HTTP servers in Java. 
 </p>
+<img src="docs/campus_map/campus_map.png" alt="Campus map project home page">
 <p>
-
+From the user's perspective, the front end displays a map of the UW campus alongside two drop down menus displaying 
+lists of buildings. The user can select a starting point and an ending point, and the UI will display the shortest 
+path between those two locations using a purple line. 
 </p>
+<p>
+The buildings are read from a CSV file into the generic graph data structure. The <code>Graph&ltN, E&gt</code> is a 
+wrapper around a <code>HashMap&ltNode&ltN&gt, HashSet&ltEdge&ltE, N&gt&gt&gt</code> and supports the following 
+functions: <code>addNode(N label), addEdge(E label, N source, N dest), getNodeList(), getEdgeSet(N parent), 
+getParents(N node), getChildren(N node), hasNode(Object o), hasEdge(E label, N source, N dest)</code>. Once the 
+buildings are read from CSV file, a graph is constructed mapping building names to their Double coordinates. That 
+graph is then sent to the following function that computes the shortest path between two points using Dijkstra's 
+algorithm:
+</p>
+<pre>
+    <code>
+    /**
+     * Finds the shortest path between two given nodes on a given graph.
+     * @param graph the graph to search through
+     * @param startNode the starting node
+     * @param destNode the destination node
+     * @param &ltT&gt a generic type parameter that represents the graph node type
+     * @return the shortest Path between startNode and destNode or null if no path exists
+     */
+    public static &ltT&gt Path&ltT&gt findShortestPath(Graph&ltT, Double&gt graph, T startNode, T destNode) {
+        PriorityQueue&ltPath&ltT&gt&gt active = new PriorityQueue&lt&gt(new PathSorter&lt&gt());
+        Set&ltT&gt finished = new HashSet&lt&gt();
+        Path&ltT&gt zeroCostPath = new Path&lt&gt(startNode);
+        active.add(zeroCostPath);
+        while (!active.isEmpty()) {
+            Path&ltT&gt minPath = active.remove();
+            T minDest = minPath.getEnd();
+            if (minDest.equals(destNode)) {
+                return minPath;
+            }
+            if (finished.contains(minDest)) {
+                continue;
+            }
+            for (Graph.Edge&ltDouble, T&gt edge : graph.getEdgeSet(minDest)) {
+                if (!finished.contains(edge.dest.label)) {
+                    Path&ltT&gt newPath = minPath.extend(edge.dest.label, edge.label);
+                    active.add(newPath);
+                }
+            }
+            finished.add(minDest);
+        }
+        return null;
+    }
+    </code>
+</pre>
 </details><br>
 
 
