@@ -93,7 +93,7 @@ lists of buildings. The user can select a starting point and an ending point, an
 path between those two locations using a purple line. 
 </p>
 <p>
-The buildings are read from a CSV file into the generic graph data structure. The <code>Graph&ltN, E&gt</code> is a 
+The buildings are read from a CSV file into the generic graph data structure. The <code>Graph&#60N, E&#62</code> is a 
 wrapper around a <code>HashMap&ltNode&ltN&gt, HashSet&ltEdge&ltE, N&gt&gt&gt</code> and supports the following 
 functions: <code>addNode(N label), addEdge(E label, N source, N dest), getNodeList(), getEdgeSet(N parent), 
 getParents(N node), getChildren(N node), hasNode(Object o), hasEdge(E label, N source, N dest)</code>. Once the 
