@@ -148,9 +148,7 @@ drawn on the map:
         Spark.get("/findPath", (request, response) -> {
             String start = request.queryParams("start");
             String end = request.queryParams("end");
-
             Path&ltPoint&gt path = campusMap.findShortestPath(start, end);
-
             Gson gson = new Gson();
             return gson.toJson(path);
         });
