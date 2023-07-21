@@ -28,7 +28,7 @@ sample works while I was a student!
 <div>
 <p>
 Contacts:
-Email: aldenhinden@gmail.com
+Email: aldenhinden@gmail.com | aghs@cs.washington.edu
 <a href="https://www.linkedin.com/in/alden-hinden-stevenson/">LinkedIn</a>
 </p>
 </div>
