@@ -1,0 +1,34 @@
+h1 {
+    font-family: 'Trebuchet MS';
+    text-align: center;
+    width: 750px;
+    font-size: larger;
+}
+
+.center {
+    margin: auto;
+    text-align: center;
+}
+
+.button {
+    text-align: center;
+    font-family: 'Trebuchet MS';
+}
+.button:hover {
+    background-color: rgb(126, 221, 255);
+}
+
+.name {
+    font-family: 'Trebuchet MS';
+}
+.mytext {
+    font-family: 'Trebuchet MS';
+    text-align: center;
+    width: 750px;
+    text-indent: 30px;
+}
+.projtitle {
+    font-family: 'Trebuchet MS';
+    text-align: center;
+    font-size: larger;
+}
