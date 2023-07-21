@@ -1,5 +1,5 @@
 h1 {
-    font-family: 'SansSerif';
+    font-family: 'Helvetica', sans-serif;
     text-align: center;
     width: 750px;
     font-size: larger;
@@ -12,23 +12,23 @@ h1 {
 
 .button {
     text-align: center;
-    font-family: 'SansSerif';
+    font-family: 'Helvetica', sans-serif;
 }
 .button:hover {
     background-color: rgb(126, 221, 255);
 }
 
 .name {
-    font-family: 'SansSerif';
+    font-family: 'Helvetica', sans-serif;
 }
 .mytext {
-    font-family: 'SansSerif';
+    font-family: 'Helvetica', sans-serif;
     text-align: center;
     width: 750px;
     text-indent: 30px;
 }
 .projtitle {
-    font-family: 'SansSerif';
+    font-family: 'Helvetica', sans-serif;
     text-align: center;
     font-size: larger;
 }
