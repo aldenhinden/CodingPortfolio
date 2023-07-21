@@ -1,4 +1,4 @@
-Hello! My name is Alden Hinden-Stevenson. I am an enthusiastic, multifaceted coder, recently graduated from the 
+Hello! My name is Alden Hinden-Stevenson. I am an enthusiastic coder, recently graduated from the 
 [UW Paul Allen School of Computer Science](https://www.cs.washington.edu/). My interests include but are not limited to:
 algorithms, distributed systems/networking, data science, and general software development. Please check out some of my 
 sample works while I was a student!
@@ -26,9 +26,7 @@ sample works while I was a student!
 ---
 
 <div>
-<p>
-Contacts:
-Email: aldenhinden@gmail.com | aghs@cs.washington.edu
-<a href="https://www.linkedin.com/in/alden-hinden-stevenson/">LinkedIn</a>
-</p>
+<p>Contacts:</p>
+<p>Email: aldenhinden@gmail.com | aghs@cs.washington.edu</p>
+<p><a href="https://www.linkedin.com/in/alden-hinden-stevenson/">LinkedIn</a></p>
 </div>
