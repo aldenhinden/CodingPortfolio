@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Projects</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
 </head>
-<body>
+<body style="background-color:#FAF9F6">
 
+<div class="center">
 <!-- ================================== DISTRIBUTED SYSTEM ================================== -->
 <details>
   <summary><b>Distributed System:</b> Java Non-Relational Database Similar to Amazon’s DynamoDB or
@@ -34,7 +35,7 @@
     a series of messages that each contain their own functionality, and timers are used to solve network latency issues,
     including message delays, reorders, and drops. "Exactly once" semantics are still guaranteed.
   </p>
-  <img src="docs/ds/pmmc.png" alt="Paxos made moderately complex, algorithm flow chart">
+  <img src="../docs/ds/pmmc.png" alt="Paxos made moderately complex, algorithm flow chart">
   <p>
     Scalability is addressed by creating a transactional key-value store that can handle sets of client requests, while
     the keys are sharded across the servers using consistent virtual hashing. A ShardMaster manages a sequence of numbered
@@ -68,7 +69,7 @@
     They have the option to choose a "quick" translation or a "deep" translation, which will make calls to the ChatGPT API
     either in parallel or sequentially, respectively.
   </p>
-  <img src="docs/rewrite/rewrite.png" alt="ReWrite translate page">
+  <img src="../docs/rewrite/rewrite.png" alt="ReWrite translate page">
   <p>
     The website front end was developed using the Angular CLI framework. Uploaded PDFs are scraped using the pdf-parse
     package from Node.js, and the output string is thereafter sent to simplification. After a prompt describing to ChatGPT
@@ -94,7 +95,7 @@
     personalized, generic graph data structure in Java. Front-end UI integration with HTML and ReactJS. Practice
     with simple HTTP servers in Java.
   </p>
-  <img src="docs/campus_map/campus_map.png" alt="Campus map project home page">
+  <img src="../docs/campus_map/campus_map.png" alt="Campus map project home page">
   <p>
     From the user's perspective, the front end displays a map of the UW campus alongside two drop down menus displaying
     lists of buildings. The user can select a starting point and an ending point, and the UI will display the shortest
@@ -188,6 +189,7 @@
   <summary><b>PacMan Search:</b> AI Driven Maze Pathfinding in Python</summary><br>
   Optimizing maze pathfinding in Python with BFS, DFS, UCS, A* search, Alpha-Beta Pruning, and practice with evaluation functions. Further exploration into reinforcement learning with value iteration, Epsilon Greedy, Q-learning, and particle filtering
 </details>
+</div>
 
 </body>
 </html>
