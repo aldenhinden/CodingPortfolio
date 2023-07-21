@@ -1,13 +1,35 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 h1 {
     font-family: 'Helvetica', sans-serif;
     text-align: center;
     width: 750px;
     font-size: larger;
+    margin-bottom: 20px;
+}
+
+details {
+    padding: 10px;
 }
 
 .center {
     margin: auto;
     text-align: center;
+    align-items: center;
+}
+
+.content-container {
+    width: 11in;
+    padding: 20px;
+}
+
+.content {
+    text-align: left;
 }
 
 .button {
@@ -18,17 +40,6 @@ h1 {
     background-color: rgb(126, 221, 255);
 }
 
-.name {
+.text {
     font-family: 'Helvetica', sans-serif;
-}
-.mytext {
-    font-family: 'Helvetica', sans-serif;
-    text-align: center;
-    width: 750px;
-    text-indent: 30px;
-}
-.projtitle {
-    font-family: 'Helvetica', sans-serif;
-    text-align: center;
-    font-size: larger;
 }
