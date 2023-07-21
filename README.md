@@ -25,5 +25,10 @@ sample works while I was a student!
 
 ---
 
+<div>
+<p>
+Contacts:
 Email: aldenhinden@gmail.com
-LinkedIn: https://www.linkedin.com/in/alden-hinden-stevenson/
+<a href="https://www.linkedin.com/in/alden-hinden-stevenson/">LinkedIn</a>
+</p>
+</div>
