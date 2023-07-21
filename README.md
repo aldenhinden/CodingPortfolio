@@ -1,8 +1,13 @@
-Some of Alden's sample [projects](https://aldenhinden.github.io/UW-Coding-Projects/) from the [UW Paul Allen School of Computer Science](https://www.cs.washington.edu/). 
+Hello! My name is Alden Hinden-Stevenson. I am an enthusiastic, multifaceted coder, recently graduated from the 
+[UW Paul Allen School of Computer Science](https://www.cs.washington.edu/). My interests include but are not limited to:
+algorithms, distributed systems/networking, data science, and general software development. Please check out some of my 
+sample works while I was a student!
 
 ---
 
-<div>
+<link rel="stylesheet" href="styles.css">
+
+<div class="center">
 
 <a href="pages/projects.html">
     <button class="button">Sample Projects</button>
@@ -17,3 +22,8 @@ Some of Alden's sample [projects](https://aldenhinden.github.io/UW-Coding-Projec
 </a>
 
 </div>
+
+---
+
+Email: aldenhinden@gmail.com
+LinkedIn: https://www.linkedin.com/in/alden-hinden-stevenson/
