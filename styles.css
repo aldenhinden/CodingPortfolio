@@ -35,7 +35,6 @@ details {
 .button {
     text-align: center;
     font-family: 'Helvetica', sans-serif;
-    padding: 25px;
 }
 .button:hover {
     background-color: rgb(126, 221, 255);
