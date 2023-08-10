@@ -44,6 +44,11 @@ details {
 .button {
     text-align: center;
     font-family: 'Helvetica', sans-serif;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    font-size: large;
+
 }
 .button:hover {
     background-color: rgb(126, 221, 255);
