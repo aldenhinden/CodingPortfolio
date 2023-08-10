@@ -16,6 +16,9 @@ h1 {
 details {
     padding: 10px;
 }
+summary {
+    cursor: pointer;
+}
 
 .center {
     margin: auto;
@@ -48,7 +51,6 @@ details {
     cursor: pointer;
     border: none;
     font-size: large;
-
 }
 .button:hover {
     background-color: rgb(126, 221, 255);
