@@ -30,6 +30,10 @@ summary {
     width: 11in;
     padding: 20px;
 }
+.homepage-container {
+    width: 7in;
+    padding: 20px;
+}
 
 .content {
     text-align: left;
@@ -42,6 +46,10 @@ summary {
     max-height: 100%;
     display: block;
     margin: auto; /* images horizontally */
+}
+.headshot {
+    max-width: 50% !important;
+    height: auto;
 }
 
 .button {
