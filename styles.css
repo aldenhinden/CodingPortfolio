@@ -58,7 +58,7 @@ summary {
     border-radius: 8px;
     cursor: pointer;
     border: none;
-    font-size: large;
+    font-size: larger;
 }
 .button:hover {
     background-color: rgb(126, 221, 255);
