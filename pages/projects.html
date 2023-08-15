@@ -15,7 +15,7 @@
         <!-- ================================== DISTRIBUTED SYSTEM ================================== -->
         <details>
             <summary><b>Distributed System:</b> Java Non-Relational Database Similar to Amazon’s DynamoDB or
-                Google’s Spanner [my favorite]</summary><br>
+                Google’s Spanner</summary><br>
             <p>
                 The quarter-long goal of this project was to build a sharded, linearizable, scalable, fault-tolerant,
                 highly available key-value store, with dynamic load balancing and atomic multi-key transactions.
@@ -193,10 +193,10 @@
 
 
         <!-- ================================== G333GLE ================================== -->
-        <details>
+        <!--<details>
             <summary><b>G333gle:</b> C/C++ File System Crawler, Indexer, and Search Engine</summary><br>
             Created LinkedList and HashMap data structures in C to integrate with C++ index file to serve as back-end of a simple word-matching “mini Google”. Practice with C/C++ HTTP server implementation.
-        </details><br>
+        </details><br>-->
 
 
         <!-- ================================== PACMAN SEARCH ================================== -->
@@ -218,15 +218,58 @@
                 an optimal DFS result would most likely be a random outlier given the nature of a maze. In turn,
                 <a href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm#Practical_optimizations_and_infinite_graphs">Uniform-Cost Search</a>
                 improves upon BFS by reducing the search space by taking into account the cost of the path, rather than
-                exploring all states level-by-level in the search tree. Various heuristics were then added to
+                exploring all states level-by-level in the search tree. Various heuristics such as
+                <a href="https://simple.wikipedia.org/wiki/Manhattan_distance">Manhattan distance</a> were then added to
                 optimize PacMan's ability to reach its goal efficiently using
                 <a href="https://en.wikipedia.org/wiki/A*_search_algorithm">A* search</a>.
             </p>
+            <pre>
+                <code>
+        def aStarSearch(problem, heuristic=nullHeuristic):
+            """Search the node that has the lowest combined cost and heuristic first."""
+
+            # frontier is priority queue sorted by g(n)+h(n),
+            #   where g(n) = the cost from root to n,
+            #   and h(n) = a heuristic approximation of the goal cost
+            # ((state, list of path directions to state, total cost of path), priority=g(n)+h(n))
+            frontier = util.PriorityQueue()
+            frontier.push((problem.getStartState(), [], 0), heuristic(problem.getStartState(), problem))
+            visited_nodes = set()
+
+            # loop through frontier queue
+            while not frontier.isEmpty():
+                # get current node tuple
+                cur_state, directions, path_cost = frontier.pop()
+
+                # CASE: cur_state == goal state
+                # return path to cur_state
+                if problem.isGoalState(cur_state):
+                    return directions
+
+                # CASE: cur_state already visited
+                if cur_state in visited_nodes:
+                    continue
+
+                # CASE: cur_state unvisited
+                # add children of cur_state to frontier queue to explore
+                for child_state, action_dir, step_cost in problem.getSuccessors(cur_state):
+                    succ_path = directions + [action_dir]
+                    # we add a priority of g(n)+h(n) to the child node to guide our search
+                    aStarHeuristic = path_cost + step_cost + heuristic(child_state, problem)
+                    frontier.push((child_state, succ_path, path_cost + step_cost), aStarHeuristic)
+
+                visited_nodes.add(cur_state)
+
+            # CASE: frontier fully explored -> therefore can't reach goal state
+            return None
+                </code>
+            </pre>
             <p>
                 In order to further reduce the search space on complex mazes, starting to include those with ghost
                 adversaries, PacMan was programmed to use
                 <a href="https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_pruning">Alpha-Beta Pruning</a> in order to
-                more quickly decide which move would lead him towards success or certain death. I began experimenting
+                more quickly decide which move would lead him towards success or certain death by discarding
+                any verifiably suboptimal branches of the tree, thereby reducing the search space. I began experimenting
                 with various <a href="https://en.wikipedia.org/wiki/Evaluation_function">evaluation functions</a> in
                 order to optimize PacMan's safe path through the treacherous maze towards success. The idea was to
                 penalize moves on the search tree that brought PacMan closer to ghosts and reward it for those that
@@ -235,7 +278,11 @@
             </p>
             <p>
                 Solving mazes is all too easy for AI PacMan when it can see a search tree, though. The next step was to
-                throw it into the maze all by itself to learn the world on its own. Starting with the
+                throw it into the maze all by itself to learn the world on its own. The goal was complete
+                <a href="https://en.wikipedia.org/wiki/Reinforcement_learning">reinforcement learning</a>, and I started
+                with <a href="https://en.wikipedia.org/wiki/Markov_decision_process">Markov Decision Processes</a>,
+                programming PacMan to iteratively update the values of states based on the expected rewards and transition
+                probabilities associated with the actions it can take in each state. Beginning with the
                 <a href="https://en.wikipedia.org/wiki/Bellman_equation">Bellman equation</a>, I ran
                 <a href="https://en.wikipedia.org/wiki/Markov_decision_process#Value_iteration">value iteration</a> in
                 order to begin focusing PacMan on solely the Markovian present moment.
@@ -245,8 +292,28 @@
                 Roughly summarized, the process described by the equation is to sum all the probabilities of the
                 options for actions at a certain state (T), multiplied by the action you’re thinking of taking
                 (the expected reward along the way, R) plus the discounted value of being there if you were to move
-                there.
-                TO BE CONTINUED...
+                there. Similarly, I also ran
+                <a href="https://en.wikipedia.org/wiki/Markov_decision_process#Policy_iteration">policy iteration</a>,
+                where PacMan focuses on improving the policy itself (the strategy that specifies the action the agent
+                should take in each state to maximize its expected cumulative reward) rather than simply the value
+                function. Asynchronous value iteration as well as prioritized sweeping were also implemented.
+            </p>
+            <p>
+                Next up, <a href="https://en.wikipedia.org/wiki/Q-learning">Q-learning</a> was implemented. In this
+                version of reinforcement learning, PacMan ponders its MDP model to arrive at a complete policy before
+                ever interacting with a real environment. When it does interact with the environment, it simply follows
+                the precomputed policy. This contrasts value iteration, where PacMan does not actually learn from
+                experience (not true reinforcement learning). PacMan was trained on hundreds of games, using an
+                epsilon-greedy exploration strategy wherein it has to choose between exploiting the currently estimated
+                best action (exploitation) and trying a new action that might yield a higher reward (exploration).
+                Finally, PacMan could be placed into an unknown maze, without knowledge of the future, and due to its
+                training and reinforcement learning, it understands how to act in its environment to most successfully
+                solve the maze.
+            </p>
+            <p>
+                The code for this project was written for the class CSE 473: Artificial Intelligence at UW. Please reach out
+                to me via email at aldenhinden@gmail.com or aghs@cs.washington.edu for code as I would be happy to discuss this
+                project further.
             </p>
 
         </details>
