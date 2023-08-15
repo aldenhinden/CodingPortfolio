@@ -65,6 +65,11 @@ summary {
     height: auto;
     border: 2px solid #000;
 }
+.campusmap {
+    max-width: 75% !important;
+    height: auto;
+    border: 2px solid #000;
+}
 /* ====================================== END INDIVIDUAL IMAGE STYLINGS ====================================== */
 
 .button {

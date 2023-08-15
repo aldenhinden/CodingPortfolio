@@ -112,7 +112,7 @@
                 personalized, generic graph data structure in Java. Front-end UI integration with HTML and ReactJS. Practice
                 with simple HTTP servers in Java.
             </p>
-            <img src="../docs/campus_map/campus_map.png" alt="Campus map project home page">
+            <img src="../docs/campus_map/campus_map.png" alt="Campus map project home page" class="campusmap">
             <p>
                 From the user's perspective, the front end displays a map of the UW campus alongside two drop down menus displaying
                 lists of buildings. The user can select a starting point and an ending point, and the UI will display the shortest
@@ -170,14 +170,14 @@
             </p>
             <pre>
                 <code>
-                    // SERVER: find a path between two buildings
-                    Spark.get("/findPath", (request, response) -> {
-                        String start = request.queryParams("start");
-                        String end = request.queryParams("end");
-                        Path&ltPoint&gt path = campusMap.findShortestPath(start, end);
-                        Gson gson = new Gson();
-                        return gson.toJson(path);
-                    });
+                // SERVER: find a path between two buildings
+                Spark.get("/findPath", (request, response) -> {
+                    String start = request.queryParams("start");
+                    String end = request.queryParams("end");
+                    Path&ltPoint&gt path = campusMap.findShortestPath(start, end);
+                    Gson gson = new Gson();
+                    return gson.toJson(path);
+                });
                 </code>
             </pre>
             <p>
