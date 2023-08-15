@@ -41,12 +41,15 @@ summary {
     display: flex;
     flex-direction: column;
 }
-
 .content img {
     max-width: 100%;
     max-height: 100%;
     display: block;
     margin: auto; /* images horizontally */
+}
+.content p {
+    margin: 0;
+    padding: 7px;
 }
 
 /* ====================================== INDIVIDUAL IMAGE STYLINGS ====================================== */
@@ -54,7 +57,6 @@ summary {
     max-width: 50% !important;
     height: auto;
 }
-
 .pmmc {
     max-width: 40% !important;
     height: auto;
