@@ -47,10 +47,7 @@ summary {
     display: block;
     margin: auto; /* images horizontally */
 }
-.content p {
-    margin: 0;
-    padding: 7px;
-}
+
 
 /* ====================================== INDIVIDUAL IMAGE STYLINGS ====================================== */
 .headshot {
