@@ -18,6 +18,7 @@ details {
 }
 summary {
     cursor: pointer;
+    font-family: 'Helvetica', sans-serif;
 }
 
 .center {
@@ -47,10 +48,24 @@ summary {
     display: block;
     margin: auto; /* images horizontally */
 }
+
+/* ====================================== INDIVIDUAL IMAGE STYLINGS ====================================== */
 .headshot {
     max-width: 50% !important;
     height: auto;
 }
+
+.pmmc {
+    max-width: 40% !important;
+    height: auto;
+    border: 2px solid #000;
+}
+.rewrite {
+    max-width: 75% !important;
+    height: auto;
+    border: 2px solid #000;
+}
+/* ====================================== END INDIVIDUAL IMAGE STYLINGS ====================================== */
 
 .button {
     text-align: center;
@@ -65,5 +80,15 @@ summary {
 }
 
 .text {
-    font-family: 'Helvetica', sans-serif;
+    font-family: 'Times New Roman', serif;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+}
+
+.flex-container img {
+    max-width: 100%;
+    margin-left: 20px;
 }

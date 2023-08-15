@@ -29,25 +29,38 @@
                 once" semantics, where clients would retry requests on timers and servers use cached results for already executed
                 requests.
             </p>
+            <div class="flex-container">
+                <p>
+                    To guarantee linearizability of commands in the event that the ViewServer goes down, a Paxos protocol
+                    was then implemented. The version implemented in class was adapted from <a href="https://paxos.systems/">this</a>
+                    paper. In general, clients send requests to all replicas, of which only the leader of the Paxos group processes,
+                    then broadcasting the request to all other replicas for consensus. Consensus is reached by way of replicas voting
+                    for which client's command should be placed into their log of commands. Once consensus on the order of commands has
+                    been reached, the leader processes the requests by moving through its log and executing consecutive slots that have
+                    been chosen by the replicas and replies to the client after each execution. The replicas will do the same, all storing
+                    commands in their own log which is updated by the leader through heartbeat messages. Servers communicate through
+                    a series of messages that each contain their own functionality, and timers are used to solve network latency issues,
+                    including message delays, reorders, and drops. "Exactly once" semantics and linearizable consistency are still guaranteed.
+                    In the event that a leader is not currently active or network latency issues have caused partitioning on
+                    the network such that the replicas are unaware of a current leader, the replicas will undergo an election process to
+                    become the new leader. Leaders are elected with a majority of votes from the total number of servers in the system,
+                    and partitions are resolved by prioritizing higher ballot numbers, which monotonically increase throughout the system's life.
+                </p>
+                <img src="../docs/ds/pmmc.png" alt="Paxos made moderately complex, algorithm flow chart" class="pmmc">
+            </div>
             <p>
-                To guarantee linearizability of commands in the event that the ViewServer goes down, a Paxos protocol
-                was then implemented. The version implemented in class was adapted from <a href="https://paxos.systems/">this</a>
-                paper. In general, clients send requests to all replicas, of which only the leader of the Paxos group processes,
-                then broadcasting the request to all other replicas for consensus. Once consensus on the order of commands has
-                been reached, the leader processes the request and replies to the client, with the replicas doing the same, all storing
-                commands in their own log which is updated by the leader through heartbeat messages. Servers talk to each other through
-                a series of messages that each contain their own functionality, and timers are used to solve network latency issues,
-                including message delays, reorders, and drops. "Exactly once" semantics are still guaranteed.
-            </p>
-            <img src="../docs/ds/pmmc.png" alt="Paxos made moderately complex, algorithm flow chart">
-            <p>
-                Scalability is addressed by creating a transactional key-value store that can handle sets of client requests, while
-                the keys are sharded across the servers using consistent virtual hashing. A ShardMaster manages a sequence of numbered
-                configurations describing a set of replica groups and an assignment of shards. Each replica group runs the previously
-                implemented Paxos protocol to guarantee linearizability of commands. To help guarantee high availability, the
-                ShardMaster will dynamically load balance the store, determining if a new configuration is necessary and redistributing
-                shards to new groups as they come and go or as keys become more popular. Lastly, transactions are processed using a
-                two-phase commit strategy so that commands can be executed across shard groups.
+                Linearizability as well as fault tolerance for network latency issues including message delays, reorders, and drops are
+                primarily solved using the Paxos protocol. Scalability is then addressed by creating a transactional key-value store that
+                can handle sets of client requests, while the keys are sharded across the servers using consistent virtual hashing.
+                A ShardMaster manages a sequence of numbered configurations describing a set of replica groups and an assignment of
+                shards. Each replica group runs the previously implemented Paxos protocol to guarantee linearizability of commands.
+                To help guarantee high availability, the ShardMaster will dynamically load balance the store, determining if a new
+                configuration is necessary and redistributing shards to new groups as they come and go or as keys become more popular.
+                Lastly, transactions are processed using a two-phase commit strategy so that commands can be executed across shard groups.
+                When a transaction is received, a coordinator uses prepare and commit messages to ask replicas if they can
+                commit to this transaction and then execute its set of commands respectively. This allows the distributed system to
+                handle increasingly high numbers of client requests. The result is a scalable, highly available, linearizable,
+                fault-tolerant database.
             </p>
             <p>
                 The code for this project was written for the class CSE 452: Distributed Systems at UW. Please reach out to me via
@@ -73,7 +86,7 @@
                 They have the option to choose a "quick" translation or a "deep" translation, which will make calls to the ChatGPT API
                 either in parallel or sequentially, respectively.
             </p>
-            <img src="../docs/rewrite/rewrite.png" alt="ReWrite translate page">
+            <img src="../docs/rewrite/rewrite.png" alt="ReWrite translate page" class="rewrite">
             <p>
                 The website front end was developed using the Angular CLI framework. Uploaded PDFs are scraped using the pdf-parse
                 package from Node.js, and the output string is thereafter sent to simplification. After a prompt describing to ChatGPT
