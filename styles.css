@@ -70,6 +70,16 @@ summary {
     height: auto;
     border: 2px solid #000;
 }
+.pacman {
+    max-width: 33% !important;
+    height: auto;
+    border: 2px solid #000;
+}
+.valueiteration {
+    max-width: 40% !important;
+    height: auto;
+    border: 2px solid #000;
+}
 /* ====================================== END INDIVIDUAL IMAGE STYLINGS ====================================== */
 
 .button {

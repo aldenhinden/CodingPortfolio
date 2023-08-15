@@ -15,7 +15,7 @@
         <!-- ================================== DISTRIBUTED SYSTEM ================================== -->
         <details>
             <summary><b>Distributed System:</b> Java Non-Relational Database Similar to Amazon’s DynamoDB or
-                Google’s Spanner</summary><br>
+                Google’s Spanner [my favorite]</summary><br>
             <p>
                 The quarter-long goal of this project was to build a sharded, linearizable, scalable, fault-tolerant,
                 highly available key-value store, with dynamic load balancing and atomic multi-key transactions.
@@ -207,8 +207,46 @@
                 evaluation functions. Further exploration into reinforcement learning with value iteration, Epsilon Greedy,
                 Q-learning, and particle filtering.
             </p>
+            <img src="../docs/pacman/pacman_search.png" alt="PacMan solving a maze using AI." class="pacman">
             <p>
-
+                Given a working PacMan game in Python, with each frame of the game representing a given "state", I was
+                able to optimize PacMan's ability to reach a target position on a monster-less board. Beginning with
+                <a href="https://en.wikipedia.org/wiki/Depth-first_search">Depth-First Search</a>, PacMan would
+                search a <a href="https://en.wikipedia.org/wiki/Tree_(data_structure)">tree</a> of possible next moves,
+                and choose the most desirable one. Although accurate, DFS is quickly optimized with
+                <a href="https://en.wikipedia.org/wiki/Breadth-first_search">Breadth-First Search</a> as
+                an optimal DFS result would most likely be a random outlier given the nature of a maze. In turn,
+                <a href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm#Practical_optimizations_and_infinite_graphs">Uniform-Cost Search</a>
+                improves upon BFS by reducing the search space by taking into account the cost of the path, rather than
+                exploring all states level-by-level in the search tree. Various heuristics were then added to
+                optimize PacMan's ability to reach its goal efficiently using
+                <a href="https://en.wikipedia.org/wiki/A*_search_algorithm">A* search</a>.
+            </p>
+            <p>
+                In order to further reduce the search space on complex mazes, starting to include those with ghost
+                adversaries, PacMan was programmed to use
+                <a href="https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_pruning">Alpha-Beta Pruning</a> in order to
+                more quickly decide which move would lead him towards success or certain death. I began experimenting
+                with various <a href="https://en.wikipedia.org/wiki/Evaluation_function">evaluation functions</a> in
+                order to optimize PacMan's safe path through the treacherous maze towards success. The idea was to
+                penalize moves on the search tree that brought PacMan closer to ghosts and reward it for those that
+                ate food dots, necessitating a scoring system with the perfect balance between avoiding death and
+                optimally eating all the dots.
+            </p>
+            <p>
+                Solving mazes is all too easy for AI PacMan when it can see a search tree, though. The next step was to
+                throw it into the maze all by itself to learn the world on its own. Starting with the
+                <a href="https://en.wikipedia.org/wiki/Bellman_equation">Bellman equation</a>, I ran
+                <a href="https://en.wikipedia.org/wiki/Markov_decision_process#Value_iteration">value iteration</a> in
+                order to begin focusing PacMan on solely the Markovian present moment.
+            </p>
+            <img src="../docs/pacman/valueiteration.png" alt="Value iteration equation." class="valueiteration">
+            <p>
+                Roughly summarized, the process described by the equation is to sum all the probabilities of the
+                options for actions at a certain state (T), multiplied by the action you’re thinking of taking
+                (the expected reward along the way, R) plus the discounted value of being there if you were to move
+                there.
+                TO BE CONTINUED...
             </p>
 
         </details>
