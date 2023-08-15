@@ -48,6 +48,10 @@ summary {
     margin: auto; /* images horizontally */
 }
 
+p {
+    margin: 0;
+    padding: 7px;
+}
 
 /* ====================================== INDIVIDUAL IMAGE STYLINGS ====================================== */
 .headshot {
