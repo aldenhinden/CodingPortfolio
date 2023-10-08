@@ -55,8 +55,9 @@ p {
 
 /* ====================================== INDIVIDUAL IMAGE STYLINGS ====================================== */
 .headshot {
-    max-width: 50% !important;
+    max-width: 75% !important;
     height: auto;
+    border-radius: 5px;
 }
 .pmmc {
     max-width: 40% !important;
